@@ -1,23 +1,50 @@
-<!doctype html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>File Encryptor/Decryptor</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Encryptor</title>
+    <link rel="stylesheet" href="./static/styles.css">
+
+    <script>
+        function showLoadingAnimation() {
+            document.getElementById('loading').style.display = 'block';
+        }
+    </script>
 </head>
 <body>
-    <h1>Encrypt and Decrypt Files</h1>
+    <div class="container">
+        <h1>File Encryptor</h1>
 
-    <h2>Encrypt File</h2>
-    <form action="/encrypt" method="post" enctype="multipart/form-data">
-        <input type="file" name="file" required>
-        <button type="submit">Encrypt</button>
-    </form>
+        <div class="instructions">
+            <div class="icon">ℹ️</div>
+            <div class="text">This tool allows you to encrypt and decrypt files. Choose the correct option below, upload your file, and click the button to proceed. The process may take a few seconds depending on the file size.</div>
+        </div>
 
-    <h2>Decrypt File</h2>
-    <form action="/decrypt" method="post" enctype="multipart/form-data">
-        <input type="file" name="file" required>
-        <button type="submit">Decrypt</button>
-    </form>
+        <div class="form-container">
+            <h2><span class="icon">🔒</span> Encrypt a File</h2>
+            <form action="/encrypt" method="post" enctype="multipart/form-data" onsubmit="showLoadingAnimation()">
+                <input type="file" name="file" required>
+                <input type="submit" value="🔐 Encrypt File">
+            </form>
+            <p>Upload your file here to encrypt it securely. The file will be returned to you with an encrypted format.</p>
+        </div>
+
+        <div class="form-container">
+            <h2><span class="icon">🔑</span> Decrypt a File</h2>
+            <form action="/decrypt" method="post" enctype="multipart/form-data" onsubmit="showLoadingAnimation()">
+                <input type="file" name="file" required>
+                <input type="submit" value="🔓 Decrypt File">
+            </form>
+            <p>Have an encrypted file? Upload it here to decrypt it and recover the original content.</p>
+        </div>
+
+        <div class="loading-animation" id="loading"></div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 File Encryptor. All rights reserved.</p>
+        <p>Have feedback or questions? Contact us at <a href="mailto:support@fileencryptor.com">support@fileencryptor.com</a>.</p>
+    </footer>
 </body>
 </html>
