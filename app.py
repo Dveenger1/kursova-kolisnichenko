@@ -4,8 +4,13 @@ from cryptography.hazmat.primitives.asymmetric import rsa, padding
 from cryptography.hazmat.primitives import serialization
 from cryptography.hazmat.primitives import hashes
 import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env
+load_dotenv()
 
 app = Flask(__name__)
+app.secret_key = os.getenv("SECRET_KEY", "default_secret_key")
 
 # Generate RSA keys (for demonstration, these should be stored securely in production)
 private_key = rsa.generate_private_key(
@@ -17,7 +22,7 @@ private_key = rsa.generate_private_key(
 public_key = private_key.public_key()
 
 # Temporary directory to store encrypted/decrypted files
-TEMP_DIR = './temp_files'
+TEMP_DIR = os.getenv("TEMP_DIR", './temp_files')
 if not os.path.exists(TEMP_DIR):
     os.makedirs(TEMP_DIR)
 
