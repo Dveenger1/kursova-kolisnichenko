@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>File Encryptor/Decryptor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Encrypt and Decrypt Files</h1>
+
+    <h2>Encrypt File</h2>
+    <form action="/encrypt" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" required>
+        <button type="submit">Encrypt</button>
+    </form>
+
+    <h2>Decrypt File</h2>
+    <form action="/decrypt" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" required>
+        <button type="submit">Decrypt</button>
+    </form>
+</body>
+</html>

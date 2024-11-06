@@ -1,0 +1,124 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.instructions {
+    display: flex;
+    align-items: center;
+    background-color: #eef;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.instructions .icon {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.instructions .text {
+    color: #333;
+    font-size: 16px;
+}
+
+.form-container {
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #444;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    margin-right: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+input[type="file"] {
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+input[type="submit"] {
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #218838;
+}
+
+p {
+    font-size: 14px;
+    color: #666;
+}
+
+.loading-animation {
+    display: none;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.loading-animation:after {
+    content: "Processing...";
+    font-size: 18px;
+    color: #666;
+}
+
+footer {
+    text-align: center;
+    margin-top: auto;
+    background-color: #f1f1f1;
+    padding: 10px;
+}
+
+footer p {
+    margin: 5px 0;
+    color: #666;
+    font-size: 14px;
+}
+
+footer a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
